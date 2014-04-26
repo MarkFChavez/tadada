@@ -28,3 +28,4 @@ en:
 
   comments:
     create_success: "Great! Comment successfully added."
+    create_error: "Sorry, the server got nothing!"

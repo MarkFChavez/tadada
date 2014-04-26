@@ -32,6 +32,21 @@ feature "Creating comments" do
       end
     end
 
+    describe "invalid creation of comments" do
+      it "shows an error message" do
+        within('.discussions') do
+          click_on discussion1.title
+        end
+
+        within('.new-comment') do
+          fill_in 'comment_body', with: ''
+          click_on 'Add comment'
+        end
+
+        expect(page).to have_content 'Sorry, the server got nothing!'
+      end
+    end
+
     describe "comments count" do
       before do
         create(:comment, discussion: discussion1)
