@@ -1,0 +1,5 @@
+%div
+  .comment-user
+    %span= comment.user.try(:email)
+  .comment-body
+    %p= comment.body

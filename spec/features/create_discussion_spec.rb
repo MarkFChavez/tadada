@@ -53,16 +53,16 @@ feature "Creating a discussion" do
       sign_in user
     end
 
-    it "only shows the discussions created by the logged in user" do
+    it "shows all discussions" do
       within('.discussions') do
-        expect(page).to have_css '.title', text: discussion1.title
-        expect(page).to have_css '.title', text: discussion2.title
-        expect(page).to_not have_css '.title', text: discussion3.title
+        expect(page).to have_content discussion1.title
+        expect(page).to have_content discussion2.title
+        expect(page).to have_content discussion3.title
       end
     end
 
     it "shows the counts of discussions created" do
-      expect(page).to have_css '.discussions-count', text: '2 discussions'
+      expect(page).to have_css '.discussions-count', text: '3 discussions'
     end
   end
 end

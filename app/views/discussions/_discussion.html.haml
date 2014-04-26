@@ -1,7 +1,6 @@
-- @discussions.each do |discussion|
-  .title
-    = discussion.title
-  .body
-    = discussion.body
-  .created_by
-    = discussion.user.try(:email)
+.title
+  = link_to discussion.title, discussion
+.body
+  = discussion.body
+.created_by
+  = discussion.user.try(:email)

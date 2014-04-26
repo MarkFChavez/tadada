@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   private
 
   def discussions
-    current_user.discussions
+    Discussion.all
   end
 end

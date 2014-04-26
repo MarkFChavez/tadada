@@ -5,9 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :discussions, dependent: :destroy
-  
-  def discuss discussion
-    record = self.discussions.build discussion    
-    record.save
-  end
 end

@@ -10,4 +10,8 @@ FactoryGirl.define do
     body { Faker::Lorem.paragraph }
     user
   end
+
+  factory :comment do
+    body { Faker::Lorem.paragraph }
+  end
 end

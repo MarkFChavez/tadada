@@ -1,0 +1,17 @@
+%h1.discussion-title= @discussion.title
+
+%div.discussion-body
+  = @discussion.body
+
+%p.discussion-created_by
+  = @discussion.user.try(:email)
+
+%div.comments
+  %h3.comments-count= count_for @discussion.comments
+  = render @discussion.comments
+
+%div.new-comment
+  = form_for [@discussion, @new_comment] do |f|
+    %div
+      = f.text_field :body
+    = f.submit 'Add comment'

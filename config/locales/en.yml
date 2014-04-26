@@ -25,3 +25,6 @@ en:
   discussions:
     create_success: "New discussion created"
     create_error: "Discussion not saved"
+
+  comments:
+    create_success: "Great! Comment successfully added."
