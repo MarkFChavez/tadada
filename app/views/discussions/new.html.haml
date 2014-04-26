@@ -1,0 +1,11 @@
+= form_for @new_discussion do |f|
+  %div
+    = f.label :title
+    = f.text_field :title
+
+  %div
+    = f.label :body
+    = f.text_area :body
+
+  = f.submit 'Save'
+

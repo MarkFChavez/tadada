@@ -10,11 +10,11 @@ describe User do
     end
 
     it "creates a new dicussion" do
-      expect { @user.discuss! @discussion }.to change(Discussion, :count).by 1
+      expect { @user.discuss @discussion }.to change(Discussion, :count).by 1
     end
 
     it "associates the discussion to the user" do
-      @user.discuss! @discussion
+      @user.discuss @discussion
       expect(Discussion.last.user).to eq @user
     end
   end

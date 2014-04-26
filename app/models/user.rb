@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :discussions, dependent: :destroy
   
-  def discuss! discussion
-    self.discussions.create! discussion    
+  def discuss discussion
+    record = self.discussions.build discussion    
+    record.save
   end
 end

@@ -1,0 +1,7 @@
+- @discussions.each do |discussion|
+  .title
+    = discussion.title
+  .body
+    = discussion.body
+  .created_by
+    = discussion.user.try(:email)

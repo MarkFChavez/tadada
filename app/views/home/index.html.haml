@@ -1,2 +1,10 @@
 %h1 Dashboard page
 = link_to 'Sign out', destroy_user_session_path, method: :delete
+
+= link_to 'Create a Discussion', new_discussion_path
+
+.discussions-count
+  = count_for @discussions
+
+.discussions
+  = render @discussions
