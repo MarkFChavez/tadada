@@ -1,6 +1,12 @@
 .title
   = link_to discussion.title, discussion
+
 .body
   = discussion.body
+
+.discussion-categories
+  - discussion.categories.each do |cat|
+    .category= cat.name
+
 .created_by
   = discussion.user.try(:email)

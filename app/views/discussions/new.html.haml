@@ -7,5 +7,10 @@
     = f.label :body
     = f.text_area :body
 
+  %div
+    = fields_for :categories do |category|
+      = category.label :name, 'Categories'
+      = category.text_field :name
+
   = f.submit 'Save'
 
