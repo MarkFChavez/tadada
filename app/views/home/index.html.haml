@@ -1,7 +1,13 @@
 %h1 Dashboard page
 = link_to 'Sign out', destroy_user_session_path, method: :delete
-
+&nbsp;
 = link_to 'Create a Discussion', new_discussion_path
+
+%div
+  = form_tag root_path, method: :get do
+    = label_tag :search, 'Search by Category'
+    = text_field_tag :search
+    = submit_tag 'Search'
 
 .discussions-count
   = count_for @discussions

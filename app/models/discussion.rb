@@ -5,4 +5,6 @@ class Discussion < ActiveRecord::Base
   has_many :categories, through: :discussion_categories
 
   validates :title, :body, presence: true
+
+  scope :search_by_category, -> (string) { includes(:categories).where(categories: { name: string }) }
 end
