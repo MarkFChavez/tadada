@@ -23,7 +23,7 @@ class DiscussionsController < ApplicationController
 
   def build_categories discussion
     if categories_params and categories_params[:name].present?
-      categories = categories_params[:name].split ","
+      categories = categories_params[:name].split(",").map(&:strip)
 
       categories.each do |category|
         cat = Category.find_or_create_by(name: category)

@@ -4,9 +4,9 @@ feature "Searching discussions" do
   let!(:user) { create(:user) }
   let!(:ruby) { create(:category, name: "ruby") }
   let!(:rails) { create(:category, name: "rails") }
-  let!(:discussion1) { create(:discussion, categories: [ruby, rails]) }
-  let!(:discussion2) { create(:discussion, categories: [ruby]) }
-  let!(:discussion3) { create(:discussion, categories: [rails]) }
+  let!(:discussion1) { create(:discussion, title: 'Sample 1', categories: [ruby, rails]) }
+  let!(:discussion2) { create(:discussion, title: 'Sample 2', categories: [ruby]) }
+  let!(:discussion3) { create(:discussion, title: 'Sample 3', categories: [rails]) }
 
   describe "by category" do
     before do
